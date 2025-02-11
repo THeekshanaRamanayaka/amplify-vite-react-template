@@ -11,8 +11,10 @@ Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Authenticator>
-      <App />
-    </Authenticator>
+    <div className="flex items-center justify-center min-h-screen">
+      <Authenticator>
+        <App />
+      </Authenticator>
+    </div>
   </React.StrictMode>
 );

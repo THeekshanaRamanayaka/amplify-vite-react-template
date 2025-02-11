@@ -24,25 +24,28 @@ function App() {
   }
 
   return (
-    <main>
-      <h1>{user?.signInDetails?.loginId}'s todos</h1>
-      <button onClick={createTodo}>+ new</button>
+    <main className="flex flex-col items-center justify-center min-h-screen">
+      <button onClick={createTodo} className="text-white bg-blue-400 p-2 rounded-xl w-56">+ new</button>
+      <h1 className="mt-10 text-xl font-bold">Todos</h1>
       <ul>
         {todos.map((todo) => (<li
+          className="mt-2 bg-gray-300 p-2 rounded-xl w-fit"
           onClick={() => deleteTodo(todo.id)}
           key={todo.id}>
           {todo.content}
         </li>
         ))}
       </ul>
-      <div>
+      <div className="text-center mt-15">
         🥳 App successfully hosted. Try creating a new todo.
         <br />
-        <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
+        <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates" 
+          className="text-blue-600 underline"
+        >
           Review next step of this tutorial.
         </a>
       </div>
-      <button onClick={signOut}>Sign out</button>
+      <button onClick={signOut} className="mt-10 text-white bg-red-500 p-2 rounded-xl w-56">Sign out</button>
     </main>
   );
 }
